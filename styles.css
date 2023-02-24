@@ -21,6 +21,10 @@ body {
     display: gird;
 }
 
+.board {
+    display: grid;
+}
+
 .footer {
     display: flex;
     flex-direction: row;
