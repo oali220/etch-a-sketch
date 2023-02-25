@@ -1,4 +1,5 @@
 
+let color = 'black'; // default color
 makeGrid(16); // default size
 
 //change size of grid
@@ -20,10 +21,7 @@ function makeGrid(size) {
 
     for(var i = 0; i < divCount; i++) {
         let div = document.createElement('div');
-        // div.style.backgroundColor = "red";
-        div.addEventListener('mouseover', function () {
-            div.style.backgroundColor = 'blue';
-       } )
+        div.addEventListener('mouseover', changeColor);
         board.insertAdjacentElement("beforeend", div); // insets the new div into our board
     }
 }
@@ -44,16 +42,20 @@ function sizeBoard() {
     }
 }
 
-function drawColor() {
-    let blackBtn = document.querySelector("#blackBtn");
-    let randomBtn = document.querySelector("#randomBtn");
-
-    blackBtn.addEventListener('click', function () {
-        return div.style.backgroundColor = 'black';
-    })
-
-    randomBtn.addEventListener('click', function () {
-        div.style.backgroundColor = 'black'
-    })
+function setColor(colorChoice) {
+    color = colorChoice;
 }
+
+function changeColor() {
+    var randomColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0");
+    
+    if (color == "random") {
+        this.style.backgroundColor = randomColor;
+    }
+    
+    else {
+        this.style.backgroundColor = 'black';
+    }
+}
+
 
