@@ -18,10 +18,6 @@ body {
     width: 600px;
     height: 600px;
     border: 1.4px solid black;
-    display: gird;
-}
-
-.board {
     display: grid;
 }
 
