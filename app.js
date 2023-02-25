@@ -1,5 +1,7 @@
 
 let color = 'black'; // default color
+let cellArray = [];
+let index = 0;
 makeGrid(16); // default size
 
 //change size of grid
@@ -21,6 +23,11 @@ function makeGrid(size) {
 
     for(var i = 0; i < divCount; i++) {
         let div = document.createElement('div');
+
+        //adding the cells into array
+        cellArray[index] = div;
+        index++;
+
         div.addEventListener('mouseover', changeColor);
         board.insertAdjacentElement("beforeend", div); // insets the new div into our board
     }
@@ -58,4 +65,8 @@ function changeColor() {
     }
 }
 
-
+function resetBoard() {
+    for(var i = 0; i < cellArray.length; i++) {
+        cellArray[i].style.backgroundColor = 'white';
+    }
+}
