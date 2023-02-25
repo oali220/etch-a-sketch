@@ -21,6 +21,9 @@ function makeGrid(size) {
     for(var i = 0; i < divCount; i++) {
         let div = document.createElement('div');
         // div.style.backgroundColor = "red";
+        div.addEventListener('mouseover', function () {
+            div.style.backgroundColor = 'blue';
+       } )
         board.insertAdjacentElement("beforeend", div); // insets the new div into our board
     }
 }
@@ -40,3 +43,17 @@ function sizeBoard() {
         return userInput;
     }
 }
+
+function drawColor() {
+    let blackBtn = document.querySelector("#blackBtn");
+    let randomBtn = document.querySelector("#randomBtn");
+
+    blackBtn.addEventListener('click', function () {
+        return div.style.backgroundColor = 'black';
+    })
+
+    randomBtn.addEventListener('click', function () {
+        div.style.backgroundColor = 'black'
+    })
+}
+
